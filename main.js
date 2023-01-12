@@ -18,7 +18,7 @@ function show() {
 }
 function stop1() {
     clearInterval(set)
-    clearInterval(set2)
+    clearInterval(set2);
 }
 function reset() {
     clearInterval(set)
