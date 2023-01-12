@@ -16,10 +16,20 @@ body {
 
 .button {}
 
-#ul {}
+#para {
+    font-family: cursive;
+    font-size: xx-large;
+}
 
-#li {
+li{
     color: yellow;
+    list-style-type: none;
+    margin: 4px;
+    padding: 10px;
+    border: 3px red;
+    border-style:groove;
+    font-family: cursive;
+    font-size: x-large;
 }
 
 .button {
