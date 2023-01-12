@@ -6,7 +6,10 @@ let hour = document.getElementById("hour")
 let min = document.getElementById("min")
 let sec = document.getElementById("sec")
 let milisecond = document.getElementById("milisec")
-let set;
+let flag = document.getElementById("flag")
+let ul = document.getElementById("list")
+let set; 
+let li
 let set2;
 let hours = 00;
 let minute = 00;
@@ -17,7 +20,7 @@ function show() {
     set2 = setInterval(display2, 10)
 }
 function stop1() {
-    clearInterval(set)
+    clearInterval(set);
     clearInterval(set2);
 }
 function reset() {
@@ -27,10 +30,11 @@ function reset() {
     minute = 00;
     milisec = 00;
     second = 00;
-    hour.innerHTML = hours
-    min.innerHTML = minute
-    sec.innerHTML = second
-    milisecond.innerHTML = milisec;
+    hour.innerHTML = "0" + hours
+    min.innerHTML = "0" + minute
+    sec.innerHTML = "0" + second
+    milisecond.innerHTML = "0" + milisec;
+    while (ul.firstChild) ul.removeChild(ul.firstChild);
 }
 function display() {
     second++
@@ -63,6 +67,15 @@ function display2() {
     if (milisec > 60) milisec = 0;
     milisecond.innerHTML = milisec;
 }
+function showflag() {
+    li = document.createElement("li");
+    li.setAttribute('id', 'li');
+    li.innerHTML = `${hours}:${minute}:${second}:${milisec}`
+    ul.appendChild(li);
+}
+
+
 start1.addEventListener("click", show);
 stop11.addEventListener("click", stop1);
 reset1.addEventListener("click", reset);
+flag.addEventListener("click", showflag);
