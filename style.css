@@ -4,18 +4,57 @@ body {
     margin: 10px;
     text-align: center;
 }
-#heading{
+
+#heading {
     color: coral;
 }
-#subheading{
 
+#subheading {
+    font-family: cursive;
+    size: 10%;
 }
-.button{
 
-}
-#ul{
+.button {}
 
-}
-#li{
+#ul {}
+
+#li {
     color: yellow;
+}
+
+.button {
+    --c: #fff;
+    /* text color */
+    background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p, 100%)/300% no-repeat,
+        #05c082;
+    /* background color */
+    color: #0000;
+    border: none;
+    transform: perspective(500px) rotateY(calc(20deg*var(--_i, -1)));
+    text-shadow: calc(var(--_i, -1)* 0.08em) -.01em 0 var(--c),
+        calc(var(--_i, -1)*-0.08em) .01em 2px #0004;
+    outline-offset: .1em;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+.button:hover,
+.button:focus-visible {
+    --_p: 3%;
+    --_i: 1;
+}
+
+.button:active {
+    text-shadow: none;
+    color: var(--c);
+    box-shadow: inset 0 0 9e9q #0005;
+    transition: 0s;
+}
+
+.button {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 3px;
+    cursor: pointer;
+    padding: .13em .3em;
 }
