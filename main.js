@@ -8,21 +8,26 @@ let sec = document.getElementById("sec")
 let milisecond = document.getElementById("milisec")
 let flag = document.getElementById("flag")
 let ul = document.getElementById("list")
-let set; 
+let set;
 let li; let bv;
 let set2;
 let hours = 00;
 let minute = 00;
 let second = 00;
 let milisec = 00;
+stop11.style.display="none";
 function show() {
     set = setInterval(display, 1000)
     set2 = setInterval(display2, 10)
+    stop11.style.display = "inline-block";
+    start1.style.display = "none";
 
 }
 function stop1() {
     clearInterval(set);
     clearInterval(set2);
+    stop11.style.display = "none";
+    start1.style.display = "inline-block";
 }
 function reset() {
     clearInterval(set)
@@ -62,8 +67,8 @@ function display() {
         hour.innerHTML = "0" + hours;
     else
         hour.innerHTML = hours;
-    
-        if(second==30)beep();
+
+    if (second == 30) beep();
 }
 function display2() {
     milisec++
