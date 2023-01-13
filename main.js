@@ -1,8 +1,7 @@
-let para = document.getElementById("stime")
-let start1 = document.getElementById("start")
-let stop11 = document.getElementById("stop")
-let reset1 = document.getElementById("reset")
-let hour = document.getElementById("hour")
+let htmlStartBtn = document.getElementById("start");
+let htmlStopBtn = document.getElementById("stop")
+let htmlResetBtn = document.getElementById("reset")
+let spanHour = document.getElementById("hour")
 let min = document.getElementById("min")
 let sec = document.getElementById("sec")
 let milisecond = document.getElementById("milisec")
@@ -15,19 +14,19 @@ let hours = 00;
 let minute = 00;
 let second = 00;
 let milisec = 00;
-stop11.style.display = "none";
+htmlStopBtn.style.display = "none";
 function show() {
     set = setInterval(display, 1000)
     set2 = setInterval(display2, 10)
-    stop11.style.display = "inline-block";
-    start1.style.display = "none";
+    htmlStopBtn.style.display = "inline-block";
+    htmlStartBtn.style.display = "none";
 
 }
 function stop1() {
     clearInterval(set);
     clearInterval(set2);
-    stop11.style.display = "none";
-    start1.style.display = "inline-block";
+    htmlStopBtn.style.display = "none";
+    htmlStartBtn.style.display = "inline-block";
 }
 function reset() {
     clearInterval(set)
@@ -36,13 +35,13 @@ function reset() {
     minute = 00;
     milisec = 00;
     second = 00;
-    hour.innerHTML = "0" + hours
+    spanHour.innerHTML = "0" + hours
     min.innerHTML = "0" + minute
     sec.innerHTML = "0" + second
     milisecond.innerHTML = "0" + milisec;
     while (ul.firstChild) ul.removeChild(ul.firstChild);
-    stop11.style.display = "none";
-    start1.style.display = "inline-block";
+    htmlStopBtn.style.display = "none";
+    htmlStartBtn.style.display = "inline-block";
 }
 function display() {
     second++
@@ -66,9 +65,9 @@ function display() {
         min.innerHTML = minute;
     }
     if (hours < 10)
-        hour.innerHTML = "0" + hours;
+        spanHour.innerHTML = "0" + hours;
     else
-        hour.innerHTML = hours;
+        spanHour.innerHTML = hours;
 
     if (second == 30) beep();
 }
@@ -101,7 +100,7 @@ function beep() {
 }
 
 
-start1.addEventListener("click", show);
-stop11.addEventListener("click", stop1);
-reset1.addEventListener("click", reset);
+htmlStartBtn.addEventListener("click", show);
+htmlStopBtn.addEventListener("click", stop1);
+htmlResetBtn.addEventListener("click", reset);
 flag.addEventListener("click", showflag);
