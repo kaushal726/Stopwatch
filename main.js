@@ -67,8 +67,16 @@ function display() {
 }
 function display2() {
     milisec++
-    if (milisec > 60) milisec = 0;
-    milisecond.innerHTML = milisec;
+    if (milisec < 10) {
+        milisecond.innerHTML = "0" + milisec;
+
+    }
+    else {
+        milisecond.innerHTML = milisec;
+    }
+    if (milisec >= 59) {
+        milisec = 00;
+    }
 }
 function showflag() {
     li = document.createElement("li");
