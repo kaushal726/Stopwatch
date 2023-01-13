@@ -32,12 +32,13 @@ margin: 0%;
 li {
     color: yellow;
     list-style-type: none;
-    margin: 4px;
+    margin-left: 400px;margin-right: 440px;
     padding: 10px;
     border: 3px red;
     border-style: groove;
     font-family: cursive;
     font-size: x-large;
+    text-align: center;
 }
 
 .button {
