@@ -9,7 +9,7 @@ body {
     color: coral;
 }
 
-#subheading {
+#subheading ,h1 {
     font-family: cursive;
     font-size: 50px;
     margin: 0%;

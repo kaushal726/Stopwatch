@@ -18,12 +18,11 @@ let milisec = 00;
 function show() {
     set = setInterval(display, 1000)
     set2 = setInterval(display2, 10)
-    bv= setInterval(beep,1000);
+
 }
 function stop1() {
     clearInterval(set);
     clearInterval(set2);
-    clearInterval(bv)
 }
 function reset() {
     clearInterval(set)
@@ -63,6 +62,8 @@ function display() {
         hour.innerHTML = "0" + hours;
     else
         hour.innerHTML = hours;
+    
+        if(second==30)beep();
 }
 function display2() {
     milisec++
